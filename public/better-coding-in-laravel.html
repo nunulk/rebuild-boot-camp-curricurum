@@ -755,6 +755,26 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>クリーンコードとは、原作者以外の人にも読むことができ、そして拡張できるコードのことです。そこには単体テストと受け入れテストがあります。そこには意味を持った名前があります。1つのことをするのに、いくつもの方法を提供するのではなく、ただ1つの方法を提供します。依存性は最低限で、それは明確に定義され、そして明快で最低限のAPIが提供されます。コードは文芸的でなければなりません。なぜなら言語によりますが、すべての必要な情報がコードだけで明確に表現できるわけではないからです。</p>
+</div>
+<div class="paragraph">
+<p>Robert C. Martin,花井 志生. Clean Code　アジャイルソフトウェア達人の技</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>私がクリーンコードの中に見つけた品質に関する項目を、1つ1つここで挙げていくこともできるでしょうが、その中でも、包括的で、すべてを先導するものが1つあります。クリーンコードは常に誰かが気配りを持って書いているように見えます。コードをよりよくするのに、すぐにわかるような明白なものは存在しません。こうしたことがらはすべて、コードの作者が考えるのです。改善について思いを馳せると、あなたは、あなた自身が座っている場所へといざなわれます。そこであなたは、誰か（同じ仲間のために、仕事に深い気配りができる誰か）が残してくれたコードを前に感謝を捧げているのです。</p>
+</div>
+<div class="paragraph">
+<p>Robert C. Martin,花井 志生. Clean Code　アジャイルソフトウェア達人の技</p>
+</div>
+</blockquote>
+</div>
 </div>
 </div>
 </div>
@@ -1698,7 +1718,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>小さいステップで繰り返し改善していきましょう</p>
 </li>
 <li>
-<p>同じ言葉であってもコンテキスト（文脈）によって異な��概念となることがあるので分けましょう</p>
+<p>同じ言葉であってもコンテキスト（文脈）によって異なる概念となることがあるので分けましょう</p>
 </li>
 <li>
 <p>クラスをレイヤー化し、依存を一方向にしましょう</p>
@@ -1870,7 +1890,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <span class="nv">$extracted</span> <span class="o">=</span> <span class="nx">Arr</span><span class="o">::</span><span class="na">only</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="p">[</span><span class="s1">'id'</span><span class="p">,</span> <span class="s1">'email'</span><span class="p">]);</span>
 
 <span class="c1">//</span>
-<span class="c1">// 配列からキーバリューペアを構築する</span>
+<span class="c1">// 配列からキー���リューペアを構築する</span>
 <span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">[</span><span class="s1">'id'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'John Lennon'</span><span class="p">,</span> <span class="s1">'email'</span> <span class="o">=&gt;</span> <span class="s1">'john@beatles.example'</span><span class="p">],</span>
     <span class="p">[</span><span class="s1">'id'</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'Paul McCartney'</span><span class="p">,</span> <span class="s1">'email'</span> <span class="o">=&gt;</span> <span class="s1">'paul@beatles.example'</span><span class="p">],</span>
@@ -1944,7 +1964,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect3">
 <h4 id="_ルートモデルバインディング">4.3.1. ルートモデルバインディング</h4>
 <div class="paragraph">
-<p>ある API で扱うモデルが予め決まっている場合、そのモデ��のインスタンスを自動的に取得することができます。</p>
+<p>ある API で扱うモデルが予め決まっている場合、そのモデルのインスタンスを自動的に取得することができます。</p>
 </div>
 <div class="paragraph">
 <p>例として、ECサイトで商品詳細データを返す API のケースを考えてみます。</p>
@@ -2111,7 +2131,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 <div class="paragraph">
-<p>これら7つのメソッドは、artisan コマンドでコントローラーを作成するときに、 <code>--resource</code> パラメータを付与して実行したときに自動的に作成されるものです。</p>
+<p>これら7つのメソッドは、artisan コマンドでコントローラーを作成するときに、 <code>--resource</code> パラメ��タを付与して実行したときに自動的に作成されるものです。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2139,7 +2159,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="paragraph">
-<p>バリデーション���様、コントローラーをスリムに保つために分割します。</p>
+<p>バリデーション同様、コントローラーをスリムに保つために分割します。</p>
 </div>
 </div>
 <div class="sect3">
@@ -2251,7 +2271,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-06-28 08:19:11 +0900
+Last updated 2020-06-28 10:51:52 +0900
 </div>
 </div>
 <style>

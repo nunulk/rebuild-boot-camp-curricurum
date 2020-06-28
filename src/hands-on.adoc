@@ -1,0 +1,99 @@
+:source-highlighter: rouge
+:toc: left
+:sectnums:
+:toclevels: 5
+:toc-title: 目次
+
+:icons: font
+
+# ハンズオン - Better Coding in Laravel
+
+## はじめに
+
+### 概要
+
+### 目的
+
+
+## 準備
+
+Docker Desktop for Mac/Windows がインストールされてない場合は、以下のリンク先からダウンロードして、インストールしておいてください。
+
+Mac
+
+https://hub.docker.com/editions/community/docker-ce-desktop-mac/
+
+Windows
+
+https://hub.docker.com/editions/community/docker-ce-desktop-windows
+
+どこか適当に better-coding-in-laravel というディレクトリをつくってください。
+
+[source,console]
+----
+$ mkdir better-coding-in-laravel
+$ cd !$
+$ mkdir app
+$ git clone git@github.com:nunulk/learning-laravel-tdd-docker.git docker
+$ cd docker
+$ cp .env.example .env
+$ make up
+----
+
+続いて Laravel をインストールします。
+
+[source,console]
+----
+$ docker exec -it learning-laravel-tdd_app_1 ash
+# composer create-project --prefer-dist laravel/laravel .
+----
+
+最後に .env と config を編集します。
+
+[source,env]
+----
+DB_CONNECTION=mysql
+DB_HOST=db
+DB_PORT=3306
+DB_DATABASE=learning_laravel_tdd
+DB_USERNAME=root
+DB_PASSWORD=root
+
+DB_TESTING_HOST=db-testing
+DB_TESTING_PORT=3306
+DB_TESTING_DATABASE=learning_laravel_tdd_testing
+DB_TESTING_USERNAME=root
+DB_TESTING_PASSWORD=root
+----
+
+config/database.php
+
+[source,diff]
+----
+                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+             ]) : [],                              
+         ],
+ 
++        'mysql_testing' => [
++            'driver' => 'mysql',
++            'host' => env('DB_TESTING_HOST', '127.0.0.1'),
++            'port' => env('DB_TESTING_PORT', '3306'),
++            'database' => env('DB_TESTING_DATABASE', 'forge'),
++            'username' => env('DB_TESTING_USERNAME', 'forge'),
++            'password' => env('DB_TESTING_PASSWORD', ''),
++            'unix_socket' => env('DB_SOCKET', ''),
++            'charset' => 'utf8mb4',
++            'collation' => 'utf8mb4_unicode_ci',
++            'prefix' => '',
++            'prefix_indexes' => true,
++            'strict' => true,
++            'engine' => null,
++            'options' => extension_loaded('pdo_mysql') ? array_filter([
++                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
++            ]) : [],
++        ],
++
+         'pgsql' => [
+             'driver' => 'pgsql',
+             'url' => env('DATABASE_URL'),
+----
