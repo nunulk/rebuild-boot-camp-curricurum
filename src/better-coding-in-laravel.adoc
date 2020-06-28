@@ -140,8 +140,7 @@
 
 以下の記事を参照してください。
 
-[ドメインモデル、ドメインロジックとは何かをコードを交えて考えてみる - Qiita](https://qiita.com/nunulk/items/022ca288fb957ba58b52)
-
+link:https://qiita.com/nunulk/items/022ca288fb957ba58b52[ドメインモデル、ドメインロジックとは何かをコードを交えて考えてみる - Qiita]
 
 一言で説明するのは難しいんですが、
 
