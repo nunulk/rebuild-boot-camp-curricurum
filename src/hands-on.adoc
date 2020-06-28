@@ -73,7 +73,7 @@ config/database.php
                  PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
              ]) : [],                              
          ],
- 
++
 +        'mysql_testing' => [
 +            'driver' => 'mysql',
 +            'host' => env('DB_TESTING_HOST', '127.0.0.1'),
@@ -92,7 +92,7 @@ config/database.php
 +                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
 +            ]) : [],
 +        ],
-+
+
          'pgsql' => [
              'driver' => 'pgsql',
              'url' => env('DATABASE_URL'),

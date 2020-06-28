@@ -535,9 +535,9 @@ DB_TESTING_PASSWORD=root</code></pre>
 <pre class="rouge highlight"><code data-lang="diff">                 PDO::MYSQL_ATTR_SSL_CA =&gt; env('MYSQL_ATTR_SSL_CA'),
              ]) : [],
          ],
-
+<span class="gi">+
 +        'mysql_testing' =&gt; [
-<span class="gi">+            'driver' =&gt; 'mysql',
++            'driver' =&gt; 'mysql',
 +            'host' =&gt; env('DB_TESTING_HOST', '127.0.0.1'),
 +            'port' =&gt; env('DB_TESTING_PORT', '3306'),
 +            'database' =&gt; env('DB_TESTING_DATABASE', 'forge'),
@@ -554,8 +554,8 @@ DB_TESTING_PASSWORD=root</code></pre>
 +                PDO::MYSQL_ATTR_SSL_CA =&gt; env('MYSQL_ATTR_SSL_CA'),
 +            ]) : [],
 +        ],
-+
-</span>         'pgsql' =&gt; [
+</span>
+         'pgsql' =&gt; [
              'driver' =&gt; 'pgsql',
              'url' =&gt; env('DATABASE_URL'),</code></pre>
 </div>
@@ -565,7 +565,7 @@ DB_TESTING_PASSWORD=root</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-06-28 10:52:06 +0900
+Last updated 2020-06-28 12:38:59 +0900
 </div>
 </div>
 <style>
