@@ -961,7 +961,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="paragraph">
-<p>要件定義や設計で抽出した概念をコードで表現するためには、名前付けが非常に重要です。人間は概念を言葉で理解するので、仕様を明確にしたり、複数人で認識を合わせたりするために、言葉に細���の注意を払う必要があります。次のセクションでもう少し詳しく説明します。</p>
+<p>要件定義や設計で抽出した概念をコードで表現するためには、名前付けが非常に重要です。人間は概念を言葉で理解するので、仕様を明確にしたり、複数人で認識を合わせたりするために、言葉に細心の注意を払う必要があります。次のセクションでもう少し詳しく説明します。</p>
 </div>
 <div class="paragraph">
 <p><strong>演習1</strong></p>
@@ -1116,7 +1116,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>構造化プログラミング（こうぞうかプログラミング、英: structured programming）とは、コンピュータプログラムの明瞭���を目的にした手法であり、一般的には順接、分岐、反復の三つの制御構造（control structures）によって、処理の流れを記述することであると認識されている。コードブロックとサブルーチンも加えられることがある。</p>
+<p>構造化プログラミング（こうぞうかプログラミング、英: structured programming）とは、コンピュータプログラムの明瞭化を目的にした手法であり、一般的には順接、分岐、反復の三つの制御構造（control structures）によって、処理の流れを記述することであると認識されている。コードブロックとサブルーチンも加えられることがある。</p>
 </div>
 </blockquote>
 <div class="attribution">
@@ -1837,7 +1837,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="content">
 <div class="title">ここまでのまとめ</div>
 <div class="paragraph">
-<p>ウェブアプリケーション開発の世界で現在主流になっているアジャイル開発でも、最初から正しいものは作れないので、小さく試して素早く改善していこう、という方針にもとづ���ていて、「適応力」が求められます。問題を見つけ、解決策を試し、うまくいけば切り替え、うまくいかなければもとに戻す、これらの小さなステップを頻繁に行います。</p>
+<p>ウェブアプリケーション開発の世界で現在主流になっているアジャイル開発でも、最初から正しいものは作れないので、小さく試して素早く改善していこう、という方針にもとづいていて、「適応力」が求められます。問題を見つけ、解決策を試し、うまくいけば切り替え、うまくいかなければもとに戻す、これらの小さなステップを頻繁に行います。</p>
 </div>
 <div class="paragraph">
 <p>この章でご紹介した「テスト駆動開発」や「ドメイン駆動設計」も同じく継続的な改善を前提にしています。<strong>最初から正しいものを作ろうとせず、間違っていたら素早く直す、そのために、あとから直しやすいようにプログラムを書く</strong>、ということが必要になります。</p>
@@ -1942,7 +1942,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>こうしておくと、ロジックが変わっても変更箇所は一箇所で済みます。</p>
 </div>
 <div class="paragraph">
-<p>ポイントは、ある概念（この場合は「承認済み」）に対して複数の実装方法が考えられるとき、選択された実装方��に依存するようなクエリを直接書かないことです。</p>
+<p>ポイントは、ある概念（この場合は「承認済み」）に対して複数の実装方法が考えられるとき、選択された実装方法に依存するようなクエリを直接書かないことです。</p>
 </div>
 </div>
 <div class="sect3">
@@ -2009,7 +2009,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect3">
 <h4 id="_入出力に関する処理を上手に分離する">4.2.3. 入出力に関する処理を上手に分離する</h4>
 <div class="paragraph">
-<p>ウェブアプリケーションはユーザーからの入力を受け取って処理を行い、処理の結果を出力しユーザーに返す、というのが基本的な処理の流れになります。そのような入出力に関する処理を上��にまとめてメインの処理と分離してやることで、メインの処理がすっきりして読みやすくなります。</p>
+<p>ウェブアプリケーションはユーザーからの入力を受け取って処理を行い、処理の結果を出力しユーザーに返す、というのが基本的な処理の流れになります。そのような入出力に関する処理を上手にまとめてメインの処理と分離してやることで、メインの処理がすっきりして読みやすくなります。</p>
 </div>
 <div class="paragraph">
 <p>例として、入力パラメータに検索条件と欲しいカラムのリストが送られてくるので、それに応じたデータの検索と出力を行う処理を考えてみます。</p>
@@ -2275,7 +2275,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="php"><span class="c1">// route</span>
-<span class="c1">// シングルアクションコントローラーの場合、ク���ス名だけでいい</span>
+<span class="c1">// シングルアクションコントローラーの場合、クラス名だけでいい</span>
 <span class="nx">Route</span><span class="o">::</span><span class="na">post</span><span class="p">(</span><span class="s1">'/users/leave'</span><span class="p">,</span> <span class="s1">'Users\LeaveController'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">'users.leave'</span><span class="p">);</span>
 
 <span class="c1">// controller</span>
@@ -2373,7 +2373,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="paragraph">
-<p>Vue.js に算出プロパティというものがありますが、それと同じ感じで、プロパティを加工して呼び出し側に渡すようなシチュエーションでは、このようにアクセサを使ったほうが、モデルを呼び出す側がわざわざ変換しなくて済むので便利です（データを使う側はそれが算出プロパティかどうかを気にする必要はありません、ほとんどの場合は）。前述のとおり、処理の流れが追いにくいというデメリットはありますが、アクセサを使う方式で統一してしまってもメリ���トがそれを上回ると思います。</p>
+<p>Vue.js に算出プロパティというものがありますが、それと同じ感じで、プロパティを加工して呼び出し側に渡すようなシチュエーションでは、このようにアクセサを使ったほうが、モデルを呼び出す側がわざわざ変換しなくて済むので便利です（データを使う側はそれが算出プロパティかどうかを気にする必要はありません、ほとんどの場合は）。前述のとおり、処理の流れが追いにくいというデメリットはありますが、アクセサを使う方式で統一してしまってもメリットがそれを上回ると思います。</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
