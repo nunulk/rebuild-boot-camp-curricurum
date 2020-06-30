@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<title>Better Coding in Laravel</title>
+<title>Better Coding with Laravel</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -439,7 +439,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Better Coding in Laravel</h1>
+<h1>Better Coding with Laravel</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">目次</div>
 <ul class="sectlevel1">
@@ -460,21 +460,20 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </li>
 <li><a href="#_ドメインモデルとは">2.2. ドメインモデルとは</a></li>
-<li><a href="#_概念の定義とメンタルマッピング">2.3. 概念の定義とメンタルマッピング</a>
+<li><a href="#_概念の定義と表現">2.3. 概念の定義と表現</a>
 <ul class="sectlevel3">
 <li><a href="#_概念の定義">2.3.1. 概念の定義</a></li>
 <li><a href="#_概念の投影としてのコード">2.3.2. 概念の投影としてのコード</a></li>
-<li><a href="#_メンタルマッピングとは">2.3.3. メンタルマッピングとは</a></li>
 </ul>
 </li>
-<li><a href="#_名前付け">2.4. 名前付け</a>
+<li><a href="#_より良い名前付け">2.4. より良い名前付け</a>
 <ul class="sectlevel3">
 <li><a href="#_変数名">2.4.1. 変数名</a></li>
 <li><a href="#_関数名">2.4.2. 関数名</a></li>
 <li><a href="#_クラス名">2.4.3. クラス名</a></li>
 </ul>
 </li>
-<li><a href="#_良い構造化">2.5. 良い構造化</a>
+<li><a href="#_より良い構造化">2.5. より良い構造化</a>
 <ul class="sectlevel3">
 <li><a href="#_構造化とは">2.5.1. 「構造化」とは</a>
 <ul class="sectlevel4">
@@ -497,7 +496,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </li>
-<li><a href="#_変更しやすいコードを書くコツより良いコーディングを支える開発プロセス">3. 変更しやすいコードを書くコツ〜より良いコーディングを支える開発プロセス</a>
+<li><a href="#_変更しやすいコードを書くコツより良いコーディングを支える開発プロセスと技術">3. 変更しやすいコードを書くコツ〜より良いコーディングを支える開発プロセスと技術</a>
 <ul class="sectlevel2">
 <li><a href="#_はじめに_2">3.1. はじめに</a>
 <ul class="sectlevel3">
@@ -505,7 +504,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_この章の目的_2">3.1.2. この章の目的</a></li>
 </ul>
 </li>
-<li><a href="#_コーディング規約と_ide">3.2. コーディング規約と IDE</a></li>
+<li><a href="#_コーディング規約とide">3.2. コーディング規約とIDE</a></li>
 <li><a href="#_テスト駆動開発とリファクタリング">3.3. テスト駆動開発とリファクタリング</a>
 <ul class="sectlevel3">
 <li><a href="#_テスト駆動開発">3.3.1. テスト駆動開発</a></li>
@@ -768,25 +767,36 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
+<div class="paragraph">
+<p>最後に、「Clean Code」という本から、著者が著名なソフトウェアエンジニアの何人かに、クリーンコードとはなにか？と聞いて得られた回答の中から一部引用します。</p>
+</div>
+<div class="paragraph">
+<p>デイブ・トーマス（OTIの創設者、Eclipsestrategyの後見人）</p>
+</div>
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
 <p>クリーンコードとは、原作者以外の人にも読むことができ、そして拡張できるコードのことです。そこには単体テストと受け入れテストがあります。そこには意味を持った名前があります。1つのことをするのに、いくつもの方法を提供するのではなく、ただ1つの方法を提供します。依存性は最低限で、それは明確に定義され、そして明快で最低限のAPIが提供されます。コードは文芸的でなければなりません。なぜなら言語によりますが、すべての必要な情報がコードだけで明確に表現できるわけではないからです。</p>
 </div>
-<div class="paragraph">
-<p>Robert C. Martin,花井 志生. Clean Code　アジャイルソフトウェア達人の技</p>
-</div>
 </blockquote>
+<div class="attribution">
+&#8212; Robert C. Martin<br>
+<cite>花井 志生. Clean Code　アジャイルソフトウェア達人の技</cite>
+</div>
+</div>
+<div class="paragraph">
+<p>マイケル・フェザーズ（『WorkingEffectivelywithLegacyCode』の著者）</p>
 </div>
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
 <p>私がクリーンコードの中に見つけた品質に関する項目を、1つ1つここで挙げていくこともできるでしょうが、その中でも、包括的で、すべてを先導するものが1つあります。クリーンコードは常に誰かが気配りを持って書いているように見えます。コードをよりよくするのに、すぐにわかるような明白なものは存在しません。こうしたことがらはすべて、コードの作者が考えるのです。改善について思いを馳せると、あなたは、あなた自身が座っている場所へといざなわれます。そこであなたは、誰か（同じ仲間のために、仕事に深い気配りができる誰か）が残してくれたコードを前に感謝を捧げているのです。</p>
 </div>
-<div class="paragraph">
-<p>Robert C. Martin,花井 志生. Clean Code　アジャイルソフトウェア達人の技</p>
-</div>
 </blockquote>
+<div class="attribution">
+&#8212; Robert C. Martin<br>
+<cite>花井 志生. Clean Code　アジャイルソフトウェア達人の技</cite>
+</div>
 </div>
 </div>
 </div>
@@ -852,13 +862,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>ソフトウェア開発におけるドメインは、そのソフトウェアがなにをするためのものなのか、という定義のうち、ウェブとかデータベースとかメールとか、そういう外部のソフトウェアや決まりごと（HTTPとかSQLとかSMTPとか）の無関係な部分</p>
 </div>
 </blockquote>
+<div class="attribution">
+&#8212; ドメインモデル、ドメインロジックとは何かをコードを交えて考えてみる - Qiita
+</div>
 </div>
 <div class="paragraph">
 <p>という理解でいったんはいいのかな、と思っています。上記の記事では、実際にコードを用いて「ドメインモデル」を表現した例も載せてありますので、そこを読むとさらに理解が深まると思います。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_概念の定義とメンタルマッピング">2.3. 概念の定義とメンタルマッピング</h3>
+<h3 id="_概念の定義と表現">2.3. 概念の定義と表現</h3>
 <div class="sect3">
 <h4 id="_概念の定義">2.3.1. 概念の定義</h4>
 <div class="quoteblock">
@@ -866,10 +879,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>思考において把握される、物事の「何たるか」という部分。抽象的かつ普遍的に捉えられた、そのものが示す性質。</p>
 </div>
-<div class="paragraph">
-<p>実用日本語表現辞典</p>
-</div>
 </blockquote>
+<div class="attribution">
+&#8212; 実用日本語表現辞典
+</div>
 </div>
 <div class="paragraph">
 <p>ソフトウェアは何らかの目的を達成するためにつくられるもので、とりわけ仕事で携わるウェブアプリケーションソフトウェアは、何らかのビジネスの一端を担う目的があることがほとんどです。そうしたビジネスの「何たるか」をコードで表現することが、プログラミングの大事な要素のひとつです。</p>
@@ -947,27 +960,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <span class="p">}</span></code></pre>
 </div>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_メンタルマッピングとは">2.3.3. メンタルマッピングとは</h4>
-<div class="quoteblock">
-<blockquote>
 <div class="paragraph">
-<p>メンタルマップ（英: mental map）とは、認知心理学において記憶の中に構成される「あるべき姿」のイメージをさす言葉である。</p>
-</div>
-<div class="paragraph">
-<p>Wikipedia</p>
-</div>
-</blockquote>
-</div>
-<div class="paragraph">
-<p>すなわち「メンタルマッピング」とは「あるべき姿を思い描く行為」であり、ソフトウェア開発における「メンタルマップ」は、開発に関わる全員が共通して思い描く「あるべき姿」であり、そのイメージをできるだけ正確にコードで表現するために必要なものです。</p>
-</div>
-<div class="paragraph">
-<p>メンタルマッピングは、人間が頭の中に思い描く多数の概念（イメージ）を繋ぎ合わせていく行為でもあります。これは一般的には「マインドマップ」として知られる、アイデアや概念を繋ぎ合わせる表現方法です。</p>
-</div>
-<div class="paragraph">
-<p>ソフトウェア開発はクリエイティブな仕事なので、こうした脳内のイメージの整理や言語化が求められます。無意識にやっている人も多いかと思いますが、もし苦手意識があるのであれば、普段からメンタルマッピングを行うことで、ものごとの抽象化、言語化といったスキルをトレーニングできるので、ぜひやってみてください。</p>
+<p>要件定義や設計で抽出した概念をコードで表現するためには、名前付けが非常に重要です。人間は概念を言葉で理解するので、仕様を明確にしたり、複数人で認識を合わせたりするために、言葉に細���の注意を払う必要があります。次のセクションでもう少し詳しく説明します。</p>
 </div>
 <div class="paragraph">
 <p><strong>演習1</strong></p>
@@ -992,9 +986,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="_名前付け">2.4. 名前付け</h3>
+<h3 id="_より良い名前付け">2.4. より良い名前付け</h3>
 <div class="paragraph">
-<p>概念の抽出ができたら、次に行うことはその概念に名前を付けることです。ほとんどの場合、プログラムは英語をベースにして書かれますので、概念は日本語、表現は英語、となり、間に翻訳が挟まることになります。日英辞典、英英辞典を使って翻訳しますが、日本特有の概念は英語化することが難しいので、複数の候補から選んで決めます。チーム開発の場合は、何らかの方法でコンセンサス（この概念にはこの語を充てますという共通理解）を取ることが必要です。</p>
+<p>概念の抽出ができたら、次に行うことはその概念に名前を付けることです。ほとんどの場合、プログラムは英語をベースにして書かれますので、概念は日本語、表現は英語、となり、間に翻訳が挟まることになります。日英辞典、英英辞典を使って翻訳しますが、日本特有の概念は英語化することが難しいので、複数の候補から選んで決めます（最近は <a href="https://codic.jp/" class="bare">https://codic.jp/</a> みたいな便利なサービスもありますので使うのもいいでしょう）。チーム開発の場合は、何らかの方法でコンセンサス（この概念にはこの語を充てますという共通理解）を取ることが必要です。</p>
 </div>
 <div class="sect3">
 <h4 id="_変数名">2.4.1. 変数名</h4>
@@ -1116,18 +1110,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="_良い構造化">2.5. 良い構造化</h3>
+<h3 id="_より良い構造化">2.5. より良い構造化</h3>
 <div class="sect3">
 <h4 id="_構造化とは">2.5.1. 「構造化」とは</h4>
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>構造化プログラミング（こうぞうかプログラミング、英: structured programming）とは、コンピュータプログラムの明瞭化を目的にした手法であり、一般的には順接、分岐、反復の三つの制御構造（control structures）によって、処理の流れを記述することであると認識されている。コードブロックとサブルーチンも加えられることがある。</p>
-</div>
-<div class="paragraph">
-<p>Wikipedia</p>
+<p>構造化プログラミング（こうぞうかプログラミング、英: structured programming）とは、コンピュータプログラムの明瞭���を目的にした手法であり、一般的には順接、分岐、反復の三つの制御構造（control structures）によって、処理の流れを記述することであると認識されている。コードブロックとサブルーチンも加えられることがある。</p>
 </div>
 </blockquote>
+<div class="attribution">
+&#8212; Wikipedia
+</div>
 </div>
 <div class="paragraph">
 <p>以下の5つがプログラムを「構造化」するための要素です。</p>
@@ -1467,54 +1461,127 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>1. 以下のコードをより良いと思える形に書き直して、理由を説明してください</p>
 </div>
+<div class="paragraph">
+<p>合計1000円以上購入で20%、10個以上購入で25%オフ</p>
+</div>
+<div class="paragraph">
+<p><strong>テストコード</strong></p>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="php"><span class="c1">// 合計1000円以上購入で20%、10個以上購入で25%オフ</span>
-<span class="nv">$fruitPrices</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'banana'</span> <span class="o">=&gt;</span> <span class="mi">300</span><span class="p">,</span> <span class="s1">'apple'</span> <span class="o">=&gt;</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">'orange'</span> <span class="o">=&gt;</span> <span class="mi">250</span><span class="p">];</span>
-<span class="nv">$itemCounts</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'banana'</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">'apple'</span> <span class="o">=&gt;</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">'orange'</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">];</span>
+<pre class="rouge highlight"><code data-lang="php"><span class="cp">&lt;?php</span>
 
-<span class="k">foreach</span> <span class="p">(</span><span class="nv">$fruitPrices</span> <span class="k">as</span> <span class="nv">$fruitName</span> <span class="o">=&gt;</span> <span class="nv">$price</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nv">$totalPrice</span> <span class="o">+=</span> <span class="nv">$price</span> <span class="o">*</span> <span class="nv">$itemCounts</span><span class="p">[</span><span class="nv">$fruitName</span><span class="p">];</span>
-    <span class="nv">$totalCount</span> <span class="o">+=</span> <span class="nv">$itemCounts</span><span class="p">[</span><span class="nv">$fruitName</span><span class="p">];</span>
-<span class="p">}</span>
+<span class="kn">namespace</span> <span class="nn">Tests\Unit</span><span class="p">;</span>
 
-<span class="k">if</span> <span class="p">(</span><span class="nv">$totalPrice</span> <span class="o">&gt;=</span> <span class="mi">1000</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nv">$discountRate</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nv">$totalCount</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nv">$discountRate</span> <span class="o">=</span> <span class="p">(</span><span class="nx">float</span><span class="p">)</span><span class="nb">bcmul</span><span class="p">(</span><span class="nv">$discountRate</span><span class="p">,</span> <span class="s1">'0.75'</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="kn">use</span> <span class="nn">App\Models\PriceCalculator</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">PHPUnit\Framework\TestCase</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">PriceCalculatorTest</span> <span class="k">extends</span> <span class="nx">TestCase</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">testCalculate</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$fruitPrices</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'banana'</span> <span class="o">=&gt;</span> <span class="mi">300</span><span class="p">,</span> <span class="s1">'apple'</span> <span class="o">=&gt;</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">'orange'</span> <span class="o">=&gt;</span> <span class="mi">250</span><span class="p">];</span>
+        <span class="nv">$itemCounts</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'banana'</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">'apple'</span> <span class="o">=&gt;</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">'orange'</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">];</span>
+
+        <span class="nv">$discountedPrice</span> <span class="o">=</span> <span class="p">(</span><span class="k">new</span> <span class="nx">PriceCalculator</span><span class="p">())</span><span class="o">-&gt;</span><span class="na">calculate</span><span class="p">(</span><span class="nv">$fruitPrices</span><span class="p">,</span> <span class="nv">$itemCounts</span><span class="p">);</span>
+
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span><span class="mi">1590</span><span class="p">,</span> <span class="nv">$discountedPrice</span><span class="p">);</span>
     <span class="p">}</span>
-<span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$totalCount</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nv">$discountRate</span> <span class="o">=</span> <span class="mf">0.75</span><span class="p">;</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="nv">$discountRate</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nv">$discountedPrice</span> <span class="o">=</span> <span class="p">(</span><span class="nx">int</span><span class="p">)</span><span class="nb">bcmul</span><span class="p">(</span><span class="nv">$totalPrice</span><span class="p">,</span> <span class="nv">$discountRate</span><span class="p">);</span>
-<span class="nb">assert</span><span class="p">(</span><span class="nv">$discountedPrice</span> <span class="o">===</span> <span class="mi">1590</span><span class="p">);</span></code></pre>
+<span class="p">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>プロダクションコード</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="kn">namespace</span> <span class="nn">App\Models</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">PriceCalculator</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">calculate</span><span class="p">(</span><span class="k">array</span> <span class="nv">$prices</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$counts</span><span class="p">)</span><span class="o">:</span> <span class="nx">int</span>
+    <span class="p">{</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$prices</span> <span class="k">as</span> <span class="nv">$fruitName</span> <span class="o">=&gt;</span> <span class="nv">$price</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$totalPrice</span> <span class="o">+=</span> <span class="nv">$price</span> <span class="o">*</span> <span class="nv">$counts</span><span class="p">[</span><span class="nv">$fruitName</span><span class="p">];</span>
+            <span class="nv">$totalCount</span> <span class="o">+=</span> <span class="nv">$counts</span><span class="p">[</span><span class="nv">$fruitName</span><span class="p">];</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$totalPrice</span> <span class="o">&gt;=</span> <span class="mi">1000</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$discountRate</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nv">$totalCount</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nv">$discountRate</span> <span class="o">=</span> <span class="p">(</span><span class="nx">float</span><span class="p">)</span><span class="nb">bcmul</span><span class="p">(</span><span class="nv">$discountRate</span><span class="p">,</span> <span class="s1">'0.75'</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$totalCount</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$discountRate</span> <span class="o">=</span> <span class="mf">0.75</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nv">$discountRate</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="p">(</span><span class="nx">int</span><span class="p">)</span><span class="nb">bcmul</span><span class="p">(</span><span class="nv">$totalPrice</span><span class="p">,</span> <span class="nv">$discountRate</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>2. 以下のコードをより良いと思える形に書き直して、理由を説明してください</p>
 </div>
+<div class="paragraph">
+<p>ユーザーが a, b, c の中から選択した文字に対応するコマンド名を取得する</p>
+</div>
+<div class="paragraph">
+<p><strong>テストコード</strong></p>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="php"><span class="c1">// ユーザーが a, b, c の中から選択した文字に対応するコマンド名を取得する</span>
-<span class="nv">$param</span> <span class="o">=</span> <span class="s1">'c'</span><span class="p">;</span>
-<span class="nv">$commandOptions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">];</span>
-<span class="nv">$commands</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'abort'</span><span class="p">,</span> <span class="s1">'break'</span><span class="p">,</span> <span class="s1">'continue'</span><span class="p">];</span>
-<span class="k">switch</span> <span class="p">(</span><span class="nv">$param</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="nv">$commandOptions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">:</span>
-        <span class="nv">$command</span> <span class="o">=</span> <span class="nv">$commands</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
-        <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="nv">$commandOptions</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">:</span>
-        <span class="nv">$command</span> <span class="o">=</span> <span class="nv">$commands</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
-        <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="nv">$commandOptions</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">:</span>
-        <span class="nv">$command</span> <span class="o">=</span> <span class="nv">$commands</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
-        <span class="k">break</span><span class="p">;</span>
-    <span class="k">default</span><span class="o">:</span>
-        <span class="k">throw</span> <span class="k">new</span> <span class="nx">\InvalidArgumentException</span><span class="p">(</span><span class="s1">'invalid parameter'</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="nb">assert</span><span class="p">(</span><span class="nv">$command</span> <span class="o">===</span> <span class="s1">'continue'</span><span class="p">);</span></code></pre>
+<pre class="rouge highlight"><code data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="kn">namespace</span> <span class="nn">Tests\Unit</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nn">App\Models\Command</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">PHPUnit\Framework\TestCase</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">CommandTest</span> <span class="k">extends</span> <span class="nx">TestCase</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">testFindCommand</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$param</span> <span class="o">=</span> <span class="s1">'c'</span><span class="p">;</span>
+        <span class="nv">$command</span> <span class="o">=</span> <span class="p">(</span><span class="k">new</span> <span class="nx">Command</span><span class="p">())</span><span class="o">-&gt;</span><span class="na">findCommand</span><span class="p">(</span><span class="nv">$param</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span><span class="s1">'continue'</span><span class="p">,</span> <span class="nv">$command</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>プロダクションコード</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="kn">namespace</span> <span class="nn">App\Models</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">Command</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">findCommand</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$option</span><span class="p">)</span><span class="o">:</span> <span class="nx">string</span>
+    <span class="p">{</span>
+        <span class="nv">$commandOptions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">];</span>
+        <span class="nv">$commands</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'abort'</span><span class="p">,</span> <span class="s1">'break'</span><span class="p">,</span> <span class="s1">'continue'</span><span class="p">];</span>
+        <span class="k">switch</span> <span class="p">(</span><span class="nv">$param</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">case</span> <span class="nv">$commandOptions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">:</span>
+                <span class="nv">$command</span> <span class="o">=</span> <span class="nv">$commands</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="nv">$commandOptions</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">:</span>
+                <span class="nv">$command</span> <span class="o">=</span> <span class="nv">$commands</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="nv">$commandOptions</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">:</span>
+                <span class="nv">$command</span> <span class="o">=</span> <span class="nv">$commands</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="k">default</span><span class="o">:</span>
+                <span class="k">throw</span> <span class="k">new</span> <span class="nx">\InvalidArgumentException</span><span class="p">(</span><span class="s1">'invalid parameter'</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1526,6 +1593,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
  $filter['key'] が status のときは status が $filter['value'] に一致するレコードを $tasks から抽出し、
  $filter['key'] が priority のときは priority が $filter['value'] に一致するレコードを $tasks から抽出する
 */</span>
+
 <span class="nv">$tasks</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">[</span><span class="s1">'id'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'status'</span> <span class="o">=&gt;</span> <span class="s1">'doing'</span><span class="p">,</span> <span class="s1">'priority'</span> <span class="o">=&gt;</span> <span class="s1">'high'</span><span class="p">],</span>
     <span class="p">[</span><span class="s1">'id'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'status'</span> <span class="o">=&gt;</span> <span class="s1">'doing'</span><span class="p">,</span> <span class="s1">'priority'</span> <span class="o">=&gt;</span> <span class="s1">'normal'</span><span class="p">],</span>
@@ -1561,7 +1629,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>コードによる表現方法はさまざまです。実装しながらあっちがいい、いやこっちがいいかも、と試行錯誤を繰り返しながら、また、コードレビューを通して他の人と議論したりしながら、改善していきますが、できるだけ早く最初から無駄のない、シンプルなコードを書けるようになるためにできる訓練があります。</p>
 </div>
 <div class="paragraph">
-<p><strong>メンタルモデルをコードに落とし込む訓練、複数のコードを見比べてどちらが良いか判断する訓練</strong></p>
+<p><strong>概念をコードに落とし込む訓練、複数のコードを見比べてどちらが良いか判断する訓練</strong></p>
 </div>
 <div class="paragraph">
 <p>こういったことを訓練するには、他にもっと良い書き方がないかな、という探究心が必要です。</p>
@@ -1574,20 +1642,20 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_変更しやすいコードを書くコツより良いコーディングを支える開発プロセス">3. 変更しやすいコードを書くコツ〜より良いコーディングを支える開発プロセス</h2>
+<h2 id="_変更しやすいコードを書くコツより良いコーディングを支える開発プロセスと技術">3. 変更しやすいコードを書くコツ〜より良いコーディングを支える開発プロセスと技術</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_はじめに_2">3.1. はじめに</h3>
 <div class="sect3">
 <h4 id="_この章の概要_2">3.1.1. この章の概要</h4>
 <div class="paragraph">
-<p>ソフトウェア開発において「ビジネスを写す」行為に相当するのは「要件定義」と「設計」です。アプリケーション（＝ウェブサービス）がビジネスそのものであるケースや、大きなビジネスの一部であるケース、自社開発や受託開発など、様々な要素が絡み合って、要件定義や設計は複雑になりがちです。それでも、そうした複雑さをできるだけ明瞭に保つためにできる工夫があります。この章ではそうした工夫の一部をご紹介します。</p>
+<p>アジャイル開発では、設計と実装を切り離さず（時として要件定義もしながら）、行ったり来たりしながら開発していきますが、そのためコードは頻繁に変更されます（仕様変更によるもの、不具合修正によるもの、リファクタリング、など）。昔は「動いてるコードに触るな」という戒律のあるチームも多かったですが（自動テストがない、不具合発生時のコストが大きい、影響範囲がわからない、などの理由で）、現代では少なくなってきています。頻繁に変更していく開発スタイルの場合、変更に強いシステムでなければなりませんし、開発プロセスもそれに応じたものにしなければなりません。この章では、継続的な改善活動を支えるプロセスや思想の一部をご紹介します。</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_この章の目的_2">3.1.2. この章の目的</h4>
 <div class="paragraph">
-<p>「前提知識」のところで挙げた以下の2点を思い出してください。</p>
+<p>「前提知識」のところで挙げた以下の項目を思い出してください。</p>
 </div>
 <div class="paragraph">
 <p><strong>なぜソフトウェアを「正しく」作ることが求められるのか？</strong></p>
@@ -1607,12 +1675,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li>
 <p>改善され続ける開発プロセス</p>
 </li>
+<li>
+<p>変更しやすいコード</p>
+</li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_コーディング規約と_ide">3.2. コーディング規約と IDE</h3>
+<h3 id="_コーディング規約とide">3.2. コーディング規約とIDE</h3>
 <div class="paragraph">
 <p>PHP には PSR（PHP Standard Recommendations）という、PHP の様々な領域において標準を規定するものがあります。ここでは詳しくは述べませんが、その中にコーディング標準に関するものもあります（最新は PSR-12）。コーディング規約は、いくつも存在するコーディング標準の中から「このやり方に従ってコーディングしよう」と取り決めることです。現在の PHP を使った開発では、この PSR が主流です。様々なチームやフレームワークで開発することになっても PSR-12 に従ってコーディングすることで、コードのフォーマットや命名規則にある程度の統一性をもたらすことができるようになり、だれが書いても同じようなコード（の見た目）になるため、読みやすいコードになります。</p>
 </div>
@@ -1727,6 +1798,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 </blockquote>
+<div class="attribution">
+&#8212; オブジェクト指向と20年戦ってわかったこと - Qiita
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -1757,13 +1831,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>上記の書籍は「ドメイン駆動設計」というタイトルで日本語訳もありますが、内容が難解で挫折する人が続出し、「実践ドメイン駆動設計」を始めとする「補助教材」が何冊も出ています。分厚い本も多いので、いきなり手を出すと損した気分になる可能性もあるので、興味のある方は手始めにこちらの記事を読むといいかもしれません。</p>
 </div>
 <div class="paragraph">
-<p><a href="https://nrslib.com/bottomup-ddd/">ボトムアップドメイン駆動設計 │ nrslib</a></p>
+<p><a href="https://little-hands.hatenablog.com/entry/2020/02/17/ooc">DDDはオブジェクト指向を利用してどのようにメンテナブルなコードを書くか - little hands' lab</a></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="title">ここまでのまとめ</div>
 <div class="paragraph">
-<p>ウェブアプリケーション開発の世界で現在主流になっているアジャイル開発でも、最初から正しいものは作れないので、小さく試して素早く改善していこう、という方針にもとづいていて、「適応力」が求められます。問題を見つけ、解決策を試し、うまくいけば切り替え、うまくいかなければもとに戻す、これらの小さなステップを頻繁に行います。</p>
+<p>ウェブアプリケーション開発の世界で現在主流になっているアジャイル開発でも、最初から正しいものは作れないので、小さく試して素早く改善していこう、という方針にもとづ���ていて、「適応力」が求められます。問題を見つけ、解決策を試し、うまくいけば切り替え、うまくいかなければもとに戻す、これらの小さなステップを頻繁に行います。</p>
 </div>
 <div class="paragraph">
 <p>この章でご紹介した「テスト駆動開発」や「ドメイン駆動設計」も同じく継続的な改善を前提にしています。<strong>最初から正しいものを作ろうとせず、間違っていたら素早く直す、そのために、あとから直しやすいようにプログラムを書く</strong>、ということが必要になります。</p>
@@ -1868,7 +1942,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>こうしておくと、ロジックが変わっても変更箇所は一箇所で済みます。</p>
 </div>
 <div class="paragraph">
-<p>ポイントは、ある概念（この場合は「承認済み」）に対して複数の実装方法が考えられるとき、選択された実装方法に依存するようなクエリを直接書かないことです。</p>
+<p>ポイントは、ある概念（この場合は「承認済み」）に対して複数の実装方法が考えられるとき、選択された実装方��に依存するようなクエリを直接書かないことです。</p>
 </div>
 </div>
 <div class="sect3">
@@ -1935,7 +2009,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect3">
 <h4 id="_入出力に関する処理を上手に分離する">4.2.3. 入出力に関する処理を上手に分離する</h4>
 <div class="paragraph">
-<p>ウェブアプリケーションはユーザーからの入力を受け取って処理を行い、処理の結果を出力しユーザーに返す、というのが基本的な処理の流れになります。そのような入出力に関する処理を上手にまとめてメインの処理と分離してやることで、メインの処理がすっきりして読みやすくなります。</p>
+<p>ウェブアプリケーションはユーザーからの入力を受け取って処理を行い、処理の結果を出力しユーザーに返す、というのが基本的な処理の流れになります。そのような入出力に関する処理を上��にまとめてメインの処理と分離してやることで、メインの処理がすっきりして読みやすくなります。</p>
 </div>
 <div class="paragraph">
 <p>例として、入力パラメータに検索条件と欲しいカラムのリストが送られてくるので、それに応じたデータの検索と出力を行う処理を考えてみます。</p>
@@ -2053,9 +2127,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
     <span class="k">public</span> <span class="k">function</span> <span class="nf">withValidator</span><span class="p">(</span><span class="nx">Validator</span> <span class="nv">$validator</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="nv">$validator</span><span class="o">-&gt;</span><span class="na">after</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nv">$validator</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">somethingElseIsInvalid</span><span class="p">())</span> <span class="p">{</span>
-            <span class="nv">$validator</span><span class="o">-&gt;</span><span class="na">errors</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="s1">'field'</span><span class="p">,</span> <span class="s1">'Something is wrong with this field!'</span><span class="p">);</span>
-        <span class="p">}</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">somethingElseIsInvalid</span><span class="p">())</span> <span class="p">{</span>
+                <span class="nv">$validator</span><span class="o">-&gt;</span><span class="na">errors</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="s1">'field'</span><span class="p">,</span> <span class="s1">'Something is wrong with this field!'</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre>
 </div>
@@ -2077,7 +2152,31 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="php"><span class="c1">// app/Exceptions/Handler.php</span>
+<pre class="rouge highlight"><code data-lang="php"><span class="c1">// before</span>
+<span class="kd">class</span> <span class="nc">SomeController</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__invoke</span><span class="p">(</span><span class="nx">SomeModel</span> <span class="nv">$some</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$something</span> <span class="o">=</span> <span class="nv">$some</span><span class="o">-&gt;</span><span class="na">doSomething</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$something</span><span class="o">-&gt;</span><span class="na">validState</span><span class="p">())</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">response</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">json</span><span class="p">(</span><span class="s1">'なんかおかしい！'</span><span class="p">,</span> <span class="mi">409</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="c1">// 続き</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// after</span>
+<span class="kd">class</span> <span class="nc">SomeController</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__invoke</span><span class="p">(</span><span class="nx">SomeModel</span> <span class="nv">$some</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// どこかで例外が発生しても Laravel がちゃんとキャッチして適切なレスポンスを返してくれるので面倒を見なくていい</span>
+        <span class="nv">$something</span> <span class="o">=</span> <span class="nv">$some</span><span class="o">-&gt;</span><span class="na">doSomething</span><span class="p">();</span>
+        <span class="c1">// 続き</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// app/Exceptions/Handler.php</span>
 <span class="kd">class</span> <span class="nc">Handler</span>
 <span class="p">{</span>
     <span class="k">protected</span> <span class="k">function</span> <span class="nf">prepareException</span><span class="p">(</span><span class="nx">Throwable</span> <span class="nv">$e</span><span class="p">)</span>
@@ -2094,9 +2193,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <span class="kd">class</span> <span class="nc">ConflictException</span> <span class="k">extends</span> <span class="nx">RuntimeException</span> <span class="p">{</span>
 <span class="p">}</span>
 
-<span class="c1">// 利用側（どこから例外を投げても Laravel がちゃんとキャッチして適切なレスポンスを返してくれます）</span>
-<span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validState</span><span class="p">())</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="k">new</span> <span class="nx">ConflictException</span><span class="p">(</span><span class="s1">'なんかおかしい！'</span><span class="p">);</span>
+<span class="c1">// app/Models/SomeModel.php</span>
+<span class="kd">class</span> <span class="nc">SomeModel</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">doSomething</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validState</span><span class="p">())</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nx">ConflictException</span><span class="p">(</span><span class="s1">'なんかおかしい！'</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="c1">// 省略</span>
+    <span class="p">}</span>
 <span class="p">}</span></code></pre>
 </div>
 </div>
@@ -2169,7 +2275,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="php"><span class="c1">// route</span>
-<span class="c1">// シングルアクションコントローラーの場合、クラス名だけでいい</span>
+<span class="c1">// シングルアクションコントローラーの場合、ク���ス名だけでいい</span>
 <span class="nx">Route</span><span class="o">::</span><span class="na">post</span><span class="p">(</span><span class="s1">'/users/leave'</span><span class="p">,</span> <span class="s1">'Users\LeaveController'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">'users.leave'</span><span class="p">);</span>
 
 <span class="c1">// controller</span>
@@ -2267,7 +2373,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="paragraph">
-<p>Vue.js に算出プロパティというものがありますが、それと同じ感じで、プロパティを加工して呼び出し側に渡すようなシチュエーションでは、このようにアクセサを使ったほうが便利です。前述のとおり、処理の流れが追いにくいというデメリットはありますが、アクセサを使う方式で統一してしまってもメリットがそれを上回ると思います。</p>
+<p>Vue.js に算出プロパティというものがありますが、それと同じ感じで、プロパティを加工して呼び出し側に渡すようなシチュエーションでは、このようにアクセサを使ったほうが、モデルを呼び出す側がわざわざ変換しなくて済むので便利です（データを使う側はそれが算出プロパティかどうかを気にする必要はありません、ほとんどの場合は）。前述のとおり、処理の流れが追いにくいというデメリットはありますが、アクセサを使う方式で統一してしまってもメリ���トがそれを上回ると思います。</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -2290,13 +2396,56 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect1">
 <h2 id="_おわりに">5. おわりに</h2>
 <div class="sectionbody">
-
+<div class="paragraph">
+<p>Laravel でウェブアプリケーションをつくる際、より良いコーディングをするためのガイドとして、いくつかのトピックについてお話しました。</p>
+</div>
+<div class="paragraph">
+<p>ただ PHP の書き方、Laravel の使い方を識るだけではなく、設計のスキルをプラスすることで、より正確で不具合の少ない、読みやすいコードになり、結果的に「正しく動き続ける」アプリケーションにできるのではないかと思います。</p>
+</div>
+<div class="paragraph">
+<p>最後にもう一度、本講義で定義したより良いコーディングをする目的を書いておきます。</p>
+</div>
+<div class="paragraph">
+<p><strong>なぜソフトウェアを「正しく」作ることが求められるのか？</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>顧客の求めているものを作ることで、顧客に価値を最大限に提供できるから</p>
+</li>
+<li>
+<p>意図したとおりに動くものを作ることで、不具合をなくすことができるから</p>
+</li>
+<li>
+<p>意図を理解しやすいものを作ることで、メンテナンスしやすくなるから</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>ソフトウェアを「正しく」作るとなにがうれしいのか？</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>お客さんにいいものが出来たと喜んでもらえるとうれしい</p>
+</li>
+<li>
+<p>不具合が少なくなればトラブルが減って平和になるのでうれしい</p>
+</li>
+<li>
+<p>他人が書いたコードが読みやすいとどういう動きになっているか悩まなくていいのでうれしい</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>お客さんのため、チームメンバーのため、なにより自分自身のために、良いソフトウェアを作っていきましょう！</p>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-06-28 13:04:02 +0900
+Last updated 2020-06-30 17:25:57 +0900
 </div>
 </div>
 <style>

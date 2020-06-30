@@ -6,11 +6,13 @@
 
 :icons: font
 
-# ハンズオン - Better Coding in Laravel
+# ハンズオン - Better Coding with Laravel
 
 ## はじめに
 
 ### 概要
+
+Laravel を使って、リファクタリングを体験してみます。演習
 
 ### 目的
 
@@ -27,11 +29,11 @@ Windows
 
 https://hub.docker.com/editions/community/docker-ce-desktop-windows
 
-どこか適当に better-coding-in-laravel というディレクトリをつくってください。
+どこか適当に better-coding-with-laravel というディレクトリをつくってください。
 
 [source,console]
 ----
-$ mkdir better-coding-in-laravel
+$ mkdir better-coding-with-laravel
 $ cd !$
 $ mkdir app
 $ git clone git@github.com:nunulk/learning-laravel-tdd-docker.git docker
