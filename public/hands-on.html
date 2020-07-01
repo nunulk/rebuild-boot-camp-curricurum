@@ -450,6 +450,21 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </li>
 <li><a href="#_準備">2. 準備</a></li>
+<li><a href="#_ハンズオンで使用するコマンド">3. ハンズオンで使用するコマンド</a>
+<ul class="sectlevel2">
+<li><a href="#_docker_コンテナに入る">3.1. Docker コンテナに入る</a></li>
+<li><a href="#_テストクラスを作成する">3.2. テストクラスを作成する</a></li>
+<li><a href="#_モデルクラスを作成する">3.3. モデルクラスを作成する</a></li>
+<li><a href="#_テストを実行する">3.4. テストを実行する</a></li>
+</ul>
+</li>
+<li><a href="#_後始末">4. 後始末</a>
+<ul class="sectlevel2">
+<li><a href="#_docker_コンテナとボリュームの削除">4.1. Docker コンテナとボリュームの削除</a></li>
+<li><a href="#_docker_イメージの削除">4.2. Docker イメージの削除</a></li>
+<li><a href="#_docker_ネットワークの削除">4.3. Docker ネットワークの削除</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -460,12 +475,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="_概要">1.1. 概要</h3>
 <div class="paragraph">
-<p>Laravel を使って、リファクタリングを体験してみます。演習</p>
+<p>本編の「演習3」を題材に、Laravel でのテストとリファクタリングを体験してみます。</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_目的">1.2. 目的</h3>
-
+<div class="paragraph">
+<p>Laravel でアプリケーションを作るのは普段の講義でやっているので、本講義の内容理解を助けるために「テストを書く」「リファクタリングする」の2つを体験してみましょう。</p>
+</div>
 </div>
 </div>
 </div>
@@ -564,10 +581,98 @@ DB_TESTING_PASSWORD=root</code></pre>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_ハンズオンで使用するコマンド">3. ハンズオンで使用するコマンド</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>プロンプトが <code>$</code> の場合はホスト側、<code>#</code> の場合はコンテナ側です。</p>
+</div>
+<div class="sect2">
+<h3 id="_docker_コンテナに入る">3.1. Docker コンテナに入る</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>$ docker exec -it learning-laravel-tdd_app_1 ash</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_テストクラスを作成する">3.2. テストクラスを作成する</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code># php artisan make:test --unit Models/SomeModelTest</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_モデルクラスを作成する">3.3. モデルクラスを作成する</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code># php artisan make:model Models/SomeModel</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_テストを実行する">3.4. テストを実行する</h3>
+<div class="paragraph">
+<p><strong>すべてのテストを実行</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code># ./vendor/bin/phpunit</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>特定のテストクラスを実行</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code># ./vendor/bin/phpunit tests/Unit/Models/SomeModelTest.php</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>特定のテストメソッドを実行</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code># ./vendor/bin/phpunit tests/Unit/Models/SomeModelTest.php --filter=testSomething</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_後始末">4. 後始末</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_docker_コンテナとボリュームの削除">4.1. Docker コンテナとボリュームの削除</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>$ docker rm -v `docker ps -a -f"name=learning-laravel"`</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_docker_イメージの削除">4.2. Docker イメージの削除</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>$ docker image prune</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_docker_ネットワークの削除">4.3. Docker ネットワークの削除</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>$ docker network prune</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-06-30 10:57:16 +0900
+Last updated 2020-07-01 21:31:53 +0900
 </div>
 </div>
 <style>

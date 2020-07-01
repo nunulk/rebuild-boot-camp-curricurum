@@ -12,10 +12,11 @@
 
 ### 概要
 
-Laravel を使って、リファクタリングを体験してみます。演習
+本編の「演習3」を題材に、Laravel でのテストとリファクタリングを体験してみます。
 
 ### 目的
 
+Laravel でアプリケーションを作るのは普段の講義でやっているので、本講義の内容理解を助けるために「テストを書く」「リファクタリングする」の2つを体験してみましょう。
 
 ## 準備
 
@@ -98,4 +99,72 @@ config/database.php
          'pgsql' => [
              'driver' => 'pgsql',
              'url' => env('DATABASE_URL'),
+----
+
+## ハンズオンで使用するコマンド
+
+プロンプトが `$` の場合はホスト側、`#` の場合はコンテナ側です。
+
+### Docker コンテナに入る
+
+[source,]
+----
+$ docker exec -it learning-laravel-tdd_app_1 ash
+----
+
+### テストクラスを作成する
+
+[source,]
+----
+# php artisan make:test --unit Models/SomeModelTest
+----
+
+### モデルクラスを作成する
+
+[source,]
+----
+# php artisan make:model Models/SomeModel
+----
+
+### テストを実行する
+
+**すべてのテストを実行**
+[source,]
+----
+# ./vendor/bin/phpunit
+----
+
+**特定のテストクラスを実行**
+[source,]
+----
+# ./vendor/bin/phpunit tests/Unit/Models/SomeModelTest.php
+----
+
+**特定のテストメソッドを実行**
+[source,]
+----
+# ./vendor/bin/phpunit tests/Unit/Models/SomeModelTest.php --filter=testSomething
+----
+
+## 後始末
+
+### Docker コンテナとボリュームの削除
+
+[source,]
+----
+$ docker rm -v `docker ps -a -f"name=learning-laravel"`
+----
+
+### Docker イメージの削除
+
+[source,]
+----
+$ docker image prune
+----
+
+### Docker ネットワークの削除
+
+[source,]
+----
+$ docker network prune
 ----

@@ -961,7 +961,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="paragraph">
-<p>要件定義や設計で抽出した概念をコードで表現するためには、名前付けが非常に重要です。人間は概念を言葉で理解するので、仕様を明確にしたり、複数人で認識を合わせたりするために、言葉に細心の注意を払う必要があります。次のセクションでもう少し詳しく説明します。</p>
+<p>要件定義や設計で抽出した概念をコードで表現するためには、名前付けが非常に重要です。人間は概念を言葉で理解するので、仕様を明確にしたり、複数人で認識を合わせたりするために、言葉に細���の注意を払う必要があります。次のセクションでもう少し詳しく説明します。</p>
 </div>
 <div class="paragraph">
 <p><strong>演習1</strong></p>
@@ -1116,7 +1116,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>構造化プログラミング（こうぞうかプログラミング、英: structured programming）とは、コンピュータプログラムの明瞭化を目的にした手法であり、一般的には順接、分岐、反復の三つの制御構造（control structures）によって、処理の流れを記述することであると認識されている。コードブロックとサブルーチンも加えられることがある。</p>
+<p>構造化プログラミング（こうぞうかプログラミング、英: structured programming）とは、コンピュータプログラムの明瞭���を目的にした手法であり、一般的には順接、分岐、反復の三つの制御構造（control structures）によって、処理の流れを記述することであると認識されている。コードブロックとサブルーチンも加えられることがある。</p>
 </div>
 </blockquote>
 <div class="attribution">
@@ -1470,8 +1470,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">declare</span><span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
 
-<span class="kn">namespace</span> <span class="nn">Tests\Unit</span><span class="p">;</span>
+<span class="kn">namespace</span> <span class="nn">Tests\Unit\Models</span><span class="p">;</span>
 
 <span class="kn">use</span> <span class="nn">App\Models\PriceCalculator</span><span class="p">;</span>
 <span class="kn">use</span> <span class="nn">PHPUnit\Framework\TestCase</span><span class="p">;</span>
@@ -1496,6 +1497,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">declare</span><span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
 
 <span class="kn">namespace</span> <span class="nn">App\Models</span><span class="p">;</span>
 
@@ -1535,8 +1537,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">declare</span><span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
 
-<span class="kn">namespace</span> <span class="nn">Tests\Unit</span><span class="p">;</span>
+<span class="kn">namespace</span> <span class="nn">Tests\Unit\Models</span><span class="p">;</span>
 
 <span class="kn">use</span> <span class="nn">App\Models\Command</span><span class="p">;</span>
 <span class="kn">use</span> <span class="nn">PHPUnit\Framework\TestCase</span><span class="p">;</span>
@@ -1558,6 +1561,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">declare</span><span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
 
 <span class="kn">namespace</span> <span class="nn">App\Models</span><span class="p">;</span>
 
@@ -1587,37 +1591,79 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>3. 以下のコードをより良いと思える形に書き直して、理由を説明してください</p>
 </div>
+<div class="paragraph">
+<p>$filter['key'] が status のときは status が $filter['value'] に一致するレコードを $tasks から抽出し、$filter['key'] が priority のときは priority が $filter['value'] に一致するレコードを $tasks から抽出する</p>
+</div>
+<div class="paragraph">
+<p><strong>テストコード</strong></p>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="php"><span class="cm">/*
- $filter['key'] が status のときは status が $filter['value'] に一致するレコードを $tasks から抽出し、
- $filter['key'] が priority のときは priority が $filter['value'] に一致するレコードを $tasks から抽出する
-*/</span>
+<pre class="rouge highlight"><code data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">declare</span><span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
 
-<span class="nv">$tasks</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">[</span><span class="s1">'id'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'status'</span> <span class="o">=&gt;</span> <span class="s1">'doing'</span><span class="p">,</span> <span class="s1">'priority'</span> <span class="o">=&gt;</span> <span class="s1">'high'</span><span class="p">],</span>
-    <span class="p">[</span><span class="s1">'id'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'status'</span> <span class="o">=&gt;</span> <span class="s1">'doing'</span><span class="p">,</span> <span class="s1">'priority'</span> <span class="o">=&gt;</span> <span class="s1">'normal'</span><span class="p">],</span>
-    <span class="p">[</span><span class="s1">'id'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'status'</span> <span class="o">=&gt;</span> <span class="s1">'open'</span><span class="p">,</span> <span class="s1">'priority'</span> <span class="o">=&gt;</span> <span class="s1">'low'</span><span class="p">],</span>
-<span class="p">];</span>
+<span class="kn">namespace</span> <span class="nn">Tests\Unit\Models</span><span class="p">;</span>
 
-<span class="nv">$filter</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'key'</span> <span class="o">=&gt;</span> <span class="s1">'status'</span><span class="p">,</span> <span class="s1">'value'</span> <span class="o">=&gt;</span> <span class="s1">'open'</span><span class="p">];</span>
+<span class="kn">use</span> <span class="nn">App\Models\Tasks</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">PHPUnit\Framework\TestCase</span><span class="p">;</span>
 
-<span class="nv">$filteredTasks</span> <span class="o">=</span> <span class="p">[];</span>
-<span class="k">if</span> <span class="p">(</span><span class="nv">$filter</span><span class="p">[</span><span class="s1">'key'</span><span class="p">]</span> <span class="o">===</span> <span class="s1">'status'</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$tasks</span> <span class="k">as</span> <span class="nv">$task</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nv">$task</span><span class="p">[</span><span class="s1">'status'</span><span class="p">]</span> <span class="o">===</span> <span class="nv">$filter</span><span class="p">[</span><span class="s1">'value'</span><span class="p">])</span> <span class="p">{</span>
-            <span class="nv">$filteredTasks</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$task</span><span class="p">;</span>
-        <span class="p">}</span>
+<span class="kd">class</span> <span class="nc">TasksTest</span> <span class="k">extends</span> <span class="nx">TestCase</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">testFilter</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$tasks</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">[</span><span class="s1">'id'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'status'</span> <span class="o">=&gt;</span> <span class="s1">'doing'</span><span class="p">,</span> <span class="s1">'priority'</span> <span class="o">=&gt;</span> <span class="s1">'high'</span><span class="p">],</span>
+            <span class="p">[</span><span class="s1">'id'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'status'</span> <span class="o">=&gt;</span> <span class="s1">'doing'</span><span class="p">,</span> <span class="s1">'priority'</span> <span class="o">=&gt;</span> <span class="s1">'normal'</span><span class="p">],</span>
+            <span class="p">[</span><span class="s1">'id'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'status'</span> <span class="o">=&gt;</span> <span class="s1">'open'</span><span class="p">,</span> <span class="s1">'priority'</span> <span class="o">=&gt;</span> <span class="s1">'low'</span><span class="p">],</span>
+        <span class="p">];</span>
+        <span class="nv">$filter</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'key'</span> <span class="o">=&gt;</span> <span class="s1">'status'</span><span class="p">,</span> <span class="s1">'value'</span> <span class="o">=&gt;</span> <span class="s1">'open'</span><span class="p">];</span>
+
+        <span class="nv">$filteredTasks</span> <span class="o">=</span> <span class="p">(</span><span class="k">new</span> <span class="nx">Tasks</span><span class="p">(</span><span class="nv">$tasks</span><span class="p">))</span><span class="o">-&gt;</span><span class="na">filter</span><span class="p">(</span><span class="nv">$filter</span><span class="p">);</span>
+
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$filteredTasks</span><span class="p">));</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nv">$filteredTasks</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]);</span>
     <span class="p">}</span>
-<span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$filter</span><span class="p">[</span><span class="s1">'key'</span><span class="p">]</span> <span class="o">===</span> <span class="s1">'priority'</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$tasks</span> <span class="k">as</span> <span class="nv">$task</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nv">$task</span><span class="p">[</span><span class="s1">'priority'</span><span class="p">]</span> <span class="o">===</span> <span class="nv">$filter</span><span class="p">[</span><span class="s1">'value'</span><span class="p">])</span> <span class="p">{</span>
-            <span class="nv">$filteredTasks</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$task</span><span class="p">;</span>
-        <span class="p">}</span>
+<span class="p">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>プロダクションコード</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">declare</span><span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="kn">namespace</span> <span class="nn">App\Models</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">Tasks</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="nv">$tasks</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="k">array</span> <span class="nv">$tasks</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">tasks</span> <span class="o">=</span> <span class="nv">$tasks</span><span class="p">;</span>
     <span class="p">}</span>
-<span class="p">}</span>
-<span class="nb">assert</span><span class="p">(</span><span class="nb">count</span><span class="p">(</span><span class="nv">$filteredTasks</span><span class="p">)</span> <span class="o">===</span> <span class="mi">1</span><span class="p">);</span>
-<span class="nb">assert</span><span class="p">(</span><span class="nv">$filteredTasks</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span> <span class="o">===</span> <span class="mi">1</span><span class="p">);</span></code></pre>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">findCommand</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$option</span><span class="p">)</span><span class="o">:</span> <span class="k">array</span>
+    <span class="p">{</span>
+        <span class="nv">$filteredTasks</span> <span class="o">=</span> <span class="p">[];</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$filter</span><span class="p">[</span><span class="s1">'key'</span><span class="p">]</span> <span class="o">===</span> <span class="s1">'status'</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">foreach</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">tasks</span> <span class="k">as</span> <span class="nv">$task</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nv">$task</span><span class="p">[</span><span class="s1">'status'</span><span class="p">]</span> <span class="o">===</span> <span class="nv">$filter</span><span class="p">[</span><span class="s1">'value'</span><span class="p">])</span> <span class="p">{</span>
+                    <span class="nv">$filteredTasks</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$task</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$filter</span><span class="p">[</span><span class="s1">'key'</span><span class="p">]</span> <span class="o">===</span> <span class="s1">'priority'</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">foreach</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">tasks</span> <span class="k">as</span> <span class="nv">$task</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nv">$task</span><span class="p">[</span><span class="s1">'priority'</span><span class="p">]</span> <span class="o">===</span> <span class="nv">$filter</span><span class="p">[</span><span class="s1">'value'</span><span class="p">])</span> <span class="p">{</span>
+                    <span class="nv">$filteredTasks</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$task</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nv">$filteredTasks</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre>
 </div>
 </div>
 </div>
@@ -1771,7 +1817,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>現在の PHP プログラミングでは、オブジェクト指向が不可欠になっている一方で、プログラムの複雑度を高める原因になってしまうこともあり、多くの人たちが頭を悩ませています。</p>
 </div>
 <div class="paragraph">
-<p>詳しい歴史的な話は割愛しますが、Java、Ruby、Python などの他のプログラミング言語でも、オブジェクト指向スタイルが主流ですし、FORTRAN、COBOL、BASIC などの手続き型しかサポートしていない言語は（FORTRAN はオブジェクト指向を最近サポートしたようですが）、もう特定の分野（数値計算、金融、教育、など）だけでしか使われなくなっています。</p>
+<p>詳しい歴史的な話は割愛しますが、Java、Ruby、Python などの他のプログラ��ング言語でも、オブジェクト指向スタイルが主流ですし、FORTRAN、COBOL、BASIC などの手続き型しかサポートしていない言語は（FORTRAN はオブジェクト指向を最近サポートしたようですが）、もう特定の分野（数値計算、金融、教育、など）だけでしか使われなくなっています。</p>
 </div>
 <div class="paragraph">
 <p><a href="https://qiita.com/shibukawa/items/2698b980933367ad93b4">オブジェクト指向と20年戦ってわかったこと - Qiita</a></p>
@@ -1888,7 +1934,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>users テーブルに is_approved (TINYINT(1)) カラムを用意し、0=未承認、1=承認済みとする</p>
+<p>users テーブルに is_approved (TINYINT(1)) ��ラムを用意し、0=未承認、1=承認済みとする</p>
 </li>
 <li>
 <p>users テーブルに approved_at (TIMESTAMP) カラムを用意し、NULL=未承認、NOT NULL=承認済みとする</p>
@@ -2214,7 +2260,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="_フレームワークの使い方を統一する">4.4. フレームワークの使い方を統一する</h3>
 <div class="paragraph">
-<p>Laravel は比較的自由度の高いフレームワークなので、ある処理を行うために、複数のやり方があることが多いです。どちらでもいいケースもありますし、こちらのほうがいい、というケースもあります。例えば前述のバリデーションにしても、コントローラーで書くかリクエストで書くか、選ばなくてはなりません。ここでは、複数の方法を示し、どちらの方法がいいか、理由を添えてコードで説明します。</p>
+<p>Laravel は比較的自由度の高いフレームワークなので、ある処理を行うために、複数のやり方があることが多いです。どちらでもいいケースもありますし、こちらのほうがいい、というケ��スもあります。例えば前述のバリデーションにしても、コントローラーで書くかリクエストで書くか、選ばなくてはなりません。ここでは、複数の方法を示し、どちらの方法がいいか、理由を添えてコードで説明します。</p>
 </div>
 <div class="sect3">
 <h4 id="_バリデーションはリクエストに書く">4.4.1. バリデーションはリクエストに書く</h4>
@@ -2445,7 +2491,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-06-30 17:25:57 +0900
+Last updated 2020-07-01 21:31:43 +0900
 </div>
 </div>
 <style>
