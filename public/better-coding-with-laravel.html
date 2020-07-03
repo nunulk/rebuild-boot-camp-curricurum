@@ -541,7 +541,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_エラーハンドリングを上手に行う">4.3.3. エラーハンドリングを上手に行う</a></li>
 </ul>
 </li>
-<li><a href="#_フレームワークの使い方を統一する">4.4. フレームワークの使い方を統一する</a>
+<li><a href="#_フレームワークの使い方を統一する">4.4. フレームワークの使い方を*統一*する</a>
 <ul class="sectlevel3">
 <li><a href="#_バリデーションはリクエストに書く">4.4.1. バリデーションはリクエストに書く</a></li>
 <li><a href="#_シングルアクションコントローラーを利用する">4.4.2. シングルアクションコントローラーを利用する</a></li>
@@ -823,7 +823,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p>顧客の求めているものを作ることで、顧客に価値を最大限に提供できるから</p>
+<p>顧客の求めていているものを作ることで、顧客に価値を最大限に提供できるから</p>
 </li>
 </ul>
 </div>
@@ -1513,14 +1513,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
         <span class="k">if</span> <span class="p">(</span><span class="nv">$totalPrice</span> <span class="o">&gt;=</span> <span class="mi">1000</span><span class="p">)</span> <span class="p">{</span>
             <span class="nv">$discountRate</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">;</span>
             <span class="k">if</span> <span class="p">(</span><span class="nv">$totalCount</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nv">$discountRate</span> <span class="o">=</span> <span class="p">(</span><span class="nx">float</span><span class="p">)</span><span class="nb">bcmul</span><span class="p">(</span><span class="nv">$discountRate</span><span class="p">,</span> <span class="s1">'0.75'</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+                <span class="nv">$discountRate</span> <span class="o">=</span> <span class="p">(</span><span class="nx">float</span><span class="p">)</span><span class="nb">bcmul</span><span class="p">(</span><span class="s2">"</span><span class="nv">$discountRate</span><span class="s2">"</span><span class="p">,</span> <span class="s1">'0.75'</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
             <span class="p">}</span>
         <span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$totalCount</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
             <span class="nv">$discountRate</span> <span class="o">=</span> <span class="mf">0.75</span><span class="p">;</span>
         <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
             <span class="nv">$discountRate</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
         <span class="p">}</span>
-        <span class="k">return</span> <span class="p">(</span><span class="nx">int</span><span class="p">)</span><span class="nb">bcmul</span><span class="p">(</span><span class="nv">$totalPrice</span><span class="p">,</span> <span class="nv">$discountRate</span><span class="p">);</span>
+        <span class="k">return</span> <span class="p">(</span><span class="nx">int</span><span class="p">)</span><span class="nb">bcmul</span><span class="p">(</span><span class="s2">"</span><span class="nv">$totalPrice</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"</span><span class="nv">$discountRate</span><span class="s2">"</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre>
 </div>
@@ -1571,7 +1571,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
     <span class="p">{</span>
         <span class="nv">$commandOptions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">];</span>
         <span class="nv">$commands</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'abort'</span><span class="p">,</span> <span class="s1">'break'</span><span class="p">,</span> <span class="s1">'continue'</span><span class="p">];</span>
-        <span class="k">switch</span> <span class="p">(</span><span class="nv">$param</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">switch</span> <span class="p">(</span><span class="nv">$option</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">case</span> <span class="nv">$commandOptions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">:</span>
                 <span class="nv">$command</span> <span class="o">=</span> <span class="nv">$commands</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
                 <span class="k">break</span><span class="p">;</span>
@@ -1584,6 +1584,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
             <span class="k">default</span><span class="o">:</span>
                 <span class="k">throw</span> <span class="k">new</span> <span class="nx">\InvalidArgumentException</span><span class="p">(</span><span class="s1">'invalid parameter'</span><span class="p">);</span>
         <span class="p">}</span>
+        <span class="k">return</span> <span class="nv">$command</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre>
 </div>
@@ -1621,7 +1622,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
         <span class="nv">$filteredTasks</span> <span class="o">=</span> <span class="p">(</span><span class="k">new</span> <span class="nx">Tasks</span><span class="p">(</span><span class="nv">$tasks</span><span class="p">))</span><span class="o">-&gt;</span><span class="na">filter</span><span class="p">(</span><span class="nv">$filter</span><span class="p">);</span>
 
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$filteredTasks</span><span class="p">));</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nv">$filteredTasks</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nv">$filteredTasks</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'id'</span><span class="p">]);</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre>
 </div>
@@ -1645,7 +1646,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">tasks</span> <span class="o">=</span> <span class="nv">$tasks</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">findCommand</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$option</span><span class="p">)</span><span class="o">:</span> <span class="k">array</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">filter</span><span class="p">(</span><span class="k">array</span> <span class="nv">$filter</span><span class="p">)</span><span class="o">:</span> <span class="k">array</span>
     <span class="p">{</span>
         <span class="nv">$filteredTasks</span> <span class="o">=</span> <span class="p">[];</span>
         <span class="k">if</span> <span class="p">(</span><span class="nv">$filter</span><span class="p">[</span><span class="s1">'key'</span><span class="p">]</span> <span class="o">===</span> <span class="s1">'status'</span><span class="p">)</span> <span class="p">{</span>
@@ -1929,7 +1930,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><a href="https://laravel.com/docs/7.x/eloquent#query-scopes" class="bare">https://laravel.com/docs/7.x/eloquent#query-scopes</a></p>
 </div>
 <div class="paragraph">
-<p>例として、ユーザーに対してなんらかの承認を行い、承認済みユーザーを区別したシチェーションを考えてみます。いくつかデータの持ち方が考えられます。</p>
+<p>例として、ユーザーに*対して*なんらかの承認を行い、承認済みユーザーを区別したシチェーションを考えてみます。いくつかデータの持ち方が考えられます。</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -2491,7 +2492,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-07-01 21:31:43 +0900
+Last updated 2020-07-03 22:17:48 +0900
 </div>
 </div>
 <style>

@@ -344,7 +344,7 @@ echo (new PublishedAt($article->publishedAt))->longFormat();
 
 [quote, Wikipedia]
 ____
-構造化プログラミング（こうぞうかプログラミング、英: structured programming）とは、コンピュータプログラムの明瞭化を目的にした手法であり、一般的には順接、分岐、反復の三つの制御構造（control structures）によって、処理の流れを記述することであると認識されている。コードブロックとサブルーチンも加えられることがある。
+構造化プログラミング（こうぞうかプログラミング、英: structured programming）とは、コンピュータプログラムの*明瞭化*を目的にした手法であり、一般的には順接、分岐、反復の三つの制御構造（control structures）によって、処理の流れを記述することであると認識されている。コードブロックとサブルーチンも加えられることがある。
 ____
 
 以下の5つがプログラムを「構造化」するための要素です。
@@ -691,14 +691,14 @@ class PriceCalculator
         if ($totalPrice >= 1000) {
             $discountRate = 0.8;
             if ($totalCount >= 10) {
-                $discountRate = (float)bcmul($discountRate, '0.75', 1);
+                $discountRate = (float)bcmul("$discountRate", '0.75', 1);
             }
         } elseif ($totalCount >= 10) {
             $discountRate = 0.75;
         } else {
             $discountRate = 1;
         }
-        return (int)bcmul($totalPrice, $discountRate);
+        return (int)bcmul("$totalPrice", "$discountRate");
     }
 }
 ----
@@ -743,7 +743,7 @@ class Command
     {
         $commandOptions = ['a', 'b', 'c'];
         $commands = ['abort', 'break', 'continue'];
-        switch ($param) {
+        switch ($option) {
             case $commandOptions[0]:
                 $command = $commands[0];
                 break;
@@ -756,6 +756,7 @@ class Command
             default:
                 throw new \InvalidArgumentException('invalid parameter');
         }
+        return $command;
     }
 }
 ----
@@ -789,10 +790,9 @@ class TasksTest extends TestCase
         $filteredTasks = (new Tasks($tasks))->filter($filter);
 
         $this->assertSame(1, count($filteredTasks));
-        $this->assertSame(1, $filteredTasks['id']);
+        $this->assertSame(1, $filteredTasks[0]['id']);
     }
 }
-
 ----
 
 **プロダクションコード**
@@ -812,7 +812,7 @@ class Tasks
         $this->tasks = $tasks;
     }
 
-    public function findCommand(string $option): array
+    public function filter(array $filter): array
     {
         $filteredTasks = [];
         if ($filter['key'] === 'status') {
@@ -922,7 +922,7 @@ elseif ($x === 1)
 
 #### オブジェクト指向
 
-現在の PHP プログラミングでは、オブジェクト指向が不可欠になっている一方で、プログラムの複雑度を高める原因になってしまうこともあり、多くの人たちが頭を悩ませています。
+現在の PHP プログラミングでは、オブジェクト指向が不可欠に*なっている*一方で、プログラムの複雑度を高める原因になってしまうこともあり、多くの人たちが頭を悩ませています。
 
 詳しい歴史的な話は割愛しますが、Java、Ruby、Python などの他のプログラミング言語でも、オブジェクト指向スタイルが主流ですし、FORTRAN、COBOL、BASIC などの手続き型しかサポートしていない言語は（FORTRAN はオブジェクト指向を最近サポートしたようですが）、もう特定の分野（数値計算、金融、教育、など）だけでしか使われなくなっています。
 
@@ -987,7 +987,7 @@ Ruby on Rails が後続のウェブアプリケーションフレームワーク
 
 https://laravel.com/docs/7.x/eloquent#query-scopes
 
-例として、ユーザーに対してなんらかの承認を行い、承認済みユーザーを区別したシチェーションを考えてみます。いくつかデータの持ち方が考えられます。
+例として、ユーザーに*対して*なんらかの承認を行い、承認済みユーザーを区別したシチェーションを考えてみます。いくつかデータの持ち方が考えられます。
 
 . users テーブルに is_approved (TINYINT(1)) カラムを用意し、0=未承認、1=承認済みとする
 . users テーブルに approved_at (TIMESTAMP) カラムを用意し、NULL=未承認、NOT NULL=承認済みとする
@@ -1279,7 +1279,7 @@ class SomeModel
 
 エラーの種類が増えてくると、どういう状態のときにどういうエラーを返せばいいか、その都度悩むことになりがちです。こういうケースではこういうエラーとあらかじめ決めておくことで、各コントローラーでエラーハンドリングをする必要がなくなるので、コード量が少なくて済みます。
 
-### フレームワークの使い方を統一する
+### フレームワークの使い方を*統一*する
 
 Laravel は比較的自由度の高いフレームワークなので、ある処理を行うために、複数のやり方があることが多いです。どちらでもいいケースもありますし、こちらのほうがいい、というケースもあります。例えば前述のバリデーションにしても、コントローラーで書くかリクエストで書くか、選ばなくてはなりません。ここでは、複数の方法を示し、どちらの方法がいいか、理由を添えてコードで説明します。
 
