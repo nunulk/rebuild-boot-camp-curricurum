@@ -37,7 +37,7 @@ https://hub.docker.com/editions/community/docker-ce-desktop-windows
 $ mkdir better-coding-with-laravel
 $ cd !$
 $ mkdir app
-$ git clone git@github.com:nunulk/learning-laravel-tdd-docker.git docker
+$ git clone https://github.com/nunulk/learning-laravel-tdd-docker.git docker
 $ cd docker
 $ cp .env.example .env
 $ make up
